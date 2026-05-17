@@ -5,12 +5,20 @@ const port = 3000;
 //informar quais arquivos devem ser exibidos
 app.use(express.static("public"));
 
-// Rota principal
+//ajustar a requisição oriunda do cliente
+app.use(express.urlencoded({ extended: true }));
+
+//rota principal
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-// Iniciar servidor
+//rota para enviar feedback
+app.post("/feedbacks/enviar", (req, res) => {
+  const { nome, feedback } = req.body;
+});
+
+//iniciar servidor
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });

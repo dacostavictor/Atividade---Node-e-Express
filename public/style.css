@@ -1,0 +1,31 @@
+body {
+  background-color: rgb(56, 56, 56);
+  color: white;
+  text-shadow: black 1px 2px 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+#formulario {
+  text-align: center;
+}
+
+input {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+button {
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  background-color: purple;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+
+button:hover {
+  background-color: rgb(177, 2, 177);
+  transform: scale(1.1);
+}
