@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+let feedbacks = [];
+
 //informar quais arquivos devem ser exibidos
 app.use(express.static("public"));
 
@@ -16,6 +18,13 @@ app.get("/", (req, res) => {
 //rota para enviar feedback
 app.post("/feedbacks/enviar", (req, res) => {
   const { nome, feedback } = req.body;
+  const novoFeedback = {
+    nome,
+    feedback,
+  };
+
+  feedbacks.push(novoFeedback);
+  console.log(feedbacks);
 });
 
 //iniciar servidor
